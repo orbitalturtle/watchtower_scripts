@@ -1,0 +1,13 @@
+# Should be located at /lib/systemd/system/watchtower.service
+
+ [Unit]
+ Description=Watchtower
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=teosd
+ Restart=on-failure
+
+ [Install]
+ WantedBy=multi-user.target
