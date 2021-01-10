@@ -1,13 +1,17 @@
 # Should be located at /lib/systemd/system/watchtower.service
 
- [Unit]
- Description=Watchtower
- After=multi-user.target
+[Unit]
+Description=Watchtower
+Wants=bitcoind.service
+After=bitcoind.service
 
- [Service]
- Type=idle
- ExecStart=teosd
- Restart=on-failure
+[Service]
+ExecStart=teosd --datadir=/path/to/.teos
 
- [Install]
- WantedBy=multi-user.target
+Type=simple
+Restart=always
+RestartSec=30
+TimeoutSec=240
+
+[Install]
+WantedBy=multi-user.target
