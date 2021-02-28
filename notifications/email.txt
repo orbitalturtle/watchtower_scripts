@@ -1,0 +1,3 @@
+Subject: XXX service has crashed
+From: XXX
+Content-Type: text/html; charset="utf8"
