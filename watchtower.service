@@ -5,6 +5,8 @@ Description=Watchtower
 Wants=bitcoind.service
 After=bitcoind.service
 
+OnFailure=status-email-user@%n.service
+
 [Service]
 ExecStart=teosd --datadir=/path/to/.teos
 

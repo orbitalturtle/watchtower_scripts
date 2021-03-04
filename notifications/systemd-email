@@ -1,3 +1,8 @@
 #!/bin/bash
 
-ssmtp alyssa.hertig@gmail.com < email.txt 
+ssmtp $1 <<ERRMAIL 
+To: $1
+Subject: $2 service has crashed
+Content-Type: text/html; charset="utf8" 
+
+ERRMAIL
